@@ -46,16 +46,34 @@ class Cliente{
             if (!(cin >> limite_retiro) || limite_retiro < 0) {
                 throw invalid_argument("Limite de retiro debe ser positivo");
             }
-        }
+        };
         void mostrarDatos(){
             cout<<"\n --- Ver datos del cliente ---"<<endl;
             cout<<"           Cliente:  " << nombre <<" "<< apellido <<endl;
             cout<<"              Edad:  " << edad <<endl;
-            cout<<"             Nivel:  " << nivel <<endl;
+            cout<<"             Nivel:  " << nivel_cliente <<endl;
             cout<<"  Limite de retiro: $" << nombre <<" "<< apellido <<endl;
         }
 };
 
 int main() {
-    return 0;
+    const int n = 3;
+    Cliente clientes[3];
+
+    for(int i=0;i < n; i++){
+        bool pendiente = true;
+        while(pendiente){
+            try{
+                cout<< "Iniciando registro de cliente "<< (i+1);
+                clientes[i].capturarDatos();
+                pendiente=false;
+            }
+            catch(const invalid_argument & e){
+                cout<<"\a" << e.what() << endl;
+                cin.clear();
+                cin.ignore(10000,'\n');
+                cout<<"Registro invalido, intenta de nuevo...";
+            }
+        };
+    }
 }
