@@ -47,6 +47,13 @@ class Cliente{
                 throw invalid_argument("Limite de retiro debe ser positivo");
             }
         }
+        void mostrarDatos(){
+            cout<<"\n --- Ver datos del cliente ---"<<endl;
+            cout<<"           Cliente:  " << nombre <<" "<< apellido <<endl;
+            cout<<"              Edad:  " << edad <<endl;
+            cout<<"             Nivel:  " << nivel <<endl;
+            cout<<"  Limite de retiro: $" << nombre <<" "<< apellido <<endl;
+        }
 };
 
 int main() {
