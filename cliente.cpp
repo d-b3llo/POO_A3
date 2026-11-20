@@ -59,6 +59,7 @@ class Cliente{
 int main() {
     const int n = 3;
     Cliente clientes[n];
+    char opcion;
 
     for(int i=0;i < n; i++){
         bool pendiente = true;
@@ -75,5 +76,12 @@ int main() {
                 cout<<"Registro invalido, intenta de nuevo...";
             }
         };
+    }
+
+    cout<<"Clientes registrados con exito. Mostrar registros? (S/N)";
+    if(opcion =='s' || opcion =='S'){
+        for(int i=0; i<n; i++){
+            clientes[i].mostrarDatos();
+        }
     }
 }
