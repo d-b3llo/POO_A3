@@ -206,27 +206,19 @@ int main() {
     Cliente clientes[n];
     char opcion;
 
-    for(int i=0;i < n; i++){
-        bool pendiente = true;
-        while(pendiente){
-            try{
-                cout<< "Iniciando registro de cliente "<< (i+1);
-                clientes[i].capturarDatos();
-                pendiente=false;
-            }
-            catch(const invalid_argument & e){
-                cout<<"\a" << e.what() << endl;
-                cin.clear();
-                cin.ignore(10000,'\n');
-                cout<<"Registro invalido, intenta de nuevo...";
-            }
-        };
+    for(int i = 0; i < n; i++){
+        cout << "Iniciando registro de cliente " << (i+1) << endl;
+        clientes[i].capturarDatos();
     }
 
-    cout<<"Clientes registrados con exito. Mostrar registros? (S/N)";
-    if(opcion =='s' || opcion =='S'){
-        for(int i=0; i<n; i++){
+    cout << "\nClientes registrados con exito. Mostrar registros? (S/N): ";
+    cin >> opcion;
+
+    if(opcion == 's' || opcion == 'S'){
+        for(int i = 0; i < n; i++){
             clientes[i].mostrarDatos();
         }
     }
+
+    return 0;
 }
