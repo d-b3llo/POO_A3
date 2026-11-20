@@ -175,13 +175,29 @@ class Cliente{
             registrarNivelCliente();
             registrarLimiteRetiro();
         };
-        
+
+        string getNombre(){
+            return nombre;
+        }
+        string getApellido(){
+            return apellido;
+        }
+        int getEdad(){
+            return edad;
+        }
+        int getNivelCliente(){
+            return nivel_cliente;
+        }
+        double getLimiteRetiro(){
+            return limite_retiro;
+        }
+
         void mostrarDatos(){
-            cout<<"\n --- Ver datos del cliente ---"<<endl;
-            cout<<"           Cliente:  " << nombre <<" "<< apellido <<endl;
-            cout<<"              Edad:  " << edad <<endl;
-            cout<<"             Nivel:  " << nivel_cliente <<endl;
-            cout<<"  Limite de retiro: $" << nombre <<" "<< apellido <<endl;
+            cout << "\n --- Ver datos del cliente ---" << endl;
+            cout << "           Cliente: " << getNombre() << " " << getApellido() << endl;
+            cout << "              Edad: " << getEdad() << endl;
+            cout << "             Nivel: " << getNivelCliente() << endl;
+            cout << "  Limite de retiro: $" << getLimiteRetiro() << endl;
         }
 };
 
