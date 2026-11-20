@@ -12,6 +12,34 @@ class Cliente{
         int edad;
         double limite_retiro;
     public:
+        Cliente(){}
+
+        string capturarNombre(){
+            string nombre;
+            cout << "Ingresar nombre: ";
+            getline(cin >> ws, nombre);
+            return nombre;
+        }
+        void setNombre(string nombre){
+            if(nombre.empty() || nombre.length() < 2){
+                throw invalid_argument("Ingresa un nombre valido");
+            }
+            this->nombre = nombre;
+        }
+        void registrarNombre(){
+            bool pendiente = true;
+            while(pendiente){
+                try{
+                    setNombre(capturarNombre());
+                    pendiente = false;
+                }
+                catch(const invalid_argument & e){
+                    cout << e.what() << endl;
+                    cout << "Intenta nuevamente." << endl;
+                }
+            }
+        }
+
         void capturarDatos(){
             cout<<"\n --- Formulario de registro de cliente ---"<<endl;
 
