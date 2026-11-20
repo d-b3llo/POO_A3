@@ -58,7 +58,7 @@ class Cliente{
 
 int main() {
     const int n = 3;
-    Cliente clientes[3];
+    Cliente clientes[n];
 
     for(int i=0;i < n; i++){
         bool pendiente = true;
