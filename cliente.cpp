@@ -52,7 +52,7 @@ class Cliente{
             cout<<"           Cliente:  " << nombre <<" "<< apellido <<endl;
             cout<<"              Edad:  " << edad <<endl;
             cout<<"             Nivel:  " << nivel_cliente <<endl;
-            cout<<"  Limite de retiro: $" << nombre <<" "<< apellido <<endl;
+            cout<<"  Limite de retiro: $" << limite_retiro <<endl;
         }
 };
 
@@ -73,12 +73,13 @@ int main() {
                 cout<<"\a" << e.what() << endl;
                 cin.clear();
                 cin.ignore(10000,'\n');
-                cout<<"Registro invalido, intenta de nuevo...";
+                cout<<"Registro invalido, intenta de nuevo..."<<endl;
             }
         };
     }
 
-    cout<<"Clientes registrados con exito. Mostrar registros? (S/N)";
+    cout<<"Clientes registrados con exito.\n Mostrar registros? (S/N)"<<endl;
+    cin>> opcion;
     if(opcion =='s' || opcion =='S'){
         for(int i=0; i<n; i++){
             clientes[i].mostrarDatos();
